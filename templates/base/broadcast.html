@@ -1,0 +1,104 @@
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast Message</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+        :root {
+            --color-main: #71c6dd;
+            --color-dark: #3f4156;
+            --color-dark-light: #696d97;
+            --color-light: #e5e5e5;
+            --color-bg: #2d2d39;
+        }
+
+        * {
+            font-family: "DM Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-light);
+            font-size: 1.6rem;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: var(--color-main);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-container {
+            background: var(--color-dark);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 40rem;
+        }
+
+        textarea {
+            width: 100%;
+            background: var(--color-dark-light);
+            border: none;
+            border-radius: 5px;
+            padding: 1rem;
+            color: var(--color-light);
+            font-size: 1.4rem;
+            resize: none;
+            height: 10rem;
+            margin-bottom: 1.5rem;
+            outline: none;
+        }
+
+        textarea::placeholder {
+            color: var(--color-light);
+        }
+
+        button {
+            background-color: var(--color-main);
+            color: var(--color-dark);
+            border: none;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--color-main);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Send Broadcast</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <textarea name="message" placeholder="Type your message here"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+{% endblock main %}

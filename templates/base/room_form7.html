@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block main %}
+<style>
+  .btn{
+    background-color: blue;
+    padding: 8px;
+    cursor: pointer;
+  }
+</style>
+ <div>
+    <form method="POST" action="">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Submit" class="btn">
+    </form>
+ </div>
+{% endblock %}

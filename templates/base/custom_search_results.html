@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    <h2>Users</h2>
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li>{{ user.username }} - {{ user.email }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users found.</p>
+    {% endif %}
+
+    <h2>Topics</h2>
+    {% if topics %}
+        <ul>
+            {% for topic in topics %}
+                <li>{{ topic.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No topics found.</p>
+    {% endif %}
+</body>
+</html>
+
+
+{% endblock main %}
