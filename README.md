@@ -14,5 +14,11 @@ A real-time chat application built with Django, featuring an admin panel to mana
 
 1. **Clone the repository:**  
    ```bash  
-   git clone https://github.com/yourusername/chat-website.git  
-   cd chat-website  
+   git clone https://github.com/PLUTOX-DEV/Plutox.git  
+   cd Plutox
+
+
+source venv/bin/activate  # On Windows: venv\Scripts\activate  
+   python -m venv venv  
+  
+pip install -r requirements.txt  
