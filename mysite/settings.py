@@ -170,7 +170,7 @@ JAZZMIN_SETTINGS = {
     "copyright": "PlutoxApp © 2024",
 
     # Search bar options: specify the models to include in search results
-    "search_model": ["auth.User", "base.Topic", ],
+    "search_model": [ "base.Topic", ],
 
 
     # Sidebar settings
