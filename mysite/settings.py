@@ -172,8 +172,6 @@ JAZZMIN_SETTINGS = {
     # Search bar options: specify the models to include in search results
     "search_model": ["auth.User", "base.Topic", ],
 
-    # Field name on the user model that contains avatar ImageField/URLField/Charfield
-    "user_avatar": "profile_picture",  # Use your user model's avatar field name
 
     # Sidebar settings
     "show_sidebar": True,  # Display the sidebar
@@ -181,45 +179,7 @@ JAZZMIN_SETTINGS = {
     "hide_apps": ["sessions"],  # Apps to hide from the menu
     "hide_models": [],  # Models to hide from the menu
 
-    # Order of apps and models in the side menu
-    "order_with_respect_to": [
-        "auth",  # User and Group management
-        "chat",  # Chat-related models
-        "chat.ChatRoom",
-        "chat.Message",
-    ],
 
-    "custom_links": {
-        "chat": [
-            {
-                "name": "Create Chat Room",
-                "url": "admin:chat_chatroom_add",
-                "icon": "fas fa-comments",
-                "permissions": ["chat.add_chatroom"],
-            },
-            {
-                "name": "Send Broadcast",
-                "url": "broadcast_message",  # Correctly named Django URL
-                "icon": "fas fa-bullhorn",
-                "permissions": ["chat.add_message"],
-            },
-        ],
-    },
-
-    # Icons for models/apps
-    "icons": {
-        "auth.User": "fas fa-user",
-        "auth.Group": "fas fa-users",
-        "chat.ChatRoom": "fas fa-comments",
-        "chat.Message": "fas fa-envelope",
-    },
-
-    # Themes and UI
-    "changeform_format": "horizontal_tabs",  # Use tabs in the admin form
-    "changeform_format_overrides": {
-        "auth.user": "collapsible",  # Example for specific models
-    },
-    "show_ui_builder": True,  # Show Jazzmin's UI builder for admin customization
 }
 
 
